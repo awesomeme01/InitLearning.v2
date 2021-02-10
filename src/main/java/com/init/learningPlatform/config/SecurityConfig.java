@@ -14,6 +14,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.sql.DataSource;
+
 @Configuration
 @EnableWebSecurity
 @CrossOrigin(origins ="*")

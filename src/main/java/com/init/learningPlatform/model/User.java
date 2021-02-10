@@ -5,8 +5,6 @@ import com.init.learningPlatform.helper.UserTypeEnum;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "user_init_1")
@@ -40,6 +38,7 @@ public class User {
         private GenderEnum gender;
         private int isActive;
         private String phoneNumber;
+        private UserTypeEnum userTypeEnum;
         public Builder(String username){
             this.username = username;
             this.isActive = 1;
@@ -47,6 +46,10 @@ public class User {
 
         public Builder withEmail(String email){
             this.email = email;
+            return this;
+        }
+        public Builder withUserType(UserTypeEnum userType){
+            this.userTypeEnum = userType;
             return this;
         }
         public Builder withPhoneNumber(String phoneNumber){
@@ -72,6 +75,7 @@ public class User {
             User user1 = new User();
             user1.username = this.username;
             user1.email = this.email;
+            user1.userType = this.userTypeEnum;
             user1.password = this.password;
             user1.gender = this.gender;
             user1.isActive = this.isActive;

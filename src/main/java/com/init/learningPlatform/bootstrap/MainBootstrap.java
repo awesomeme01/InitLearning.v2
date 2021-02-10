@@ -2,6 +2,7 @@ package com.init.learningPlatform.bootstrap;
 
 import com.init.learningPlatform.helper.CourseStatusEnum;
 import com.init.learningPlatform.helper.GenderEnum;
+import com.init.learningPlatform.helper.UserTypeEnum;
 import com.init.learningPlatform.model.Course;
 import com.init.learningPlatform.model.User;
 import com.init.learningPlatform.model.UserRole;
@@ -31,7 +32,7 @@ public class MainBootstrap implements CommandLineRunner {
         courseService.createCourse(course2);
         courseService.createCourse(course3);
 
-        User user1 = new User.Builder("admin").withGender(GenderEnum.MALE).withPassword("1267476").withPhoneNumber("996555348520").withEmail("gijdjd@gmail.com").isActive(1).build();
+        User user1 = new User.Builder("admin").withUserType(UserTypeEnum.ADMINISTRATION).withGender(GenderEnum.MALE).withPassword("1267476").withPhoneNumber("996555348520").withEmail("gijdjd@gmail.com").isActive(1).build();
 
         userService.createUser(user1);
         UserRole userRole1 = new UserRole(user1,"ROLE_ADMIN");
